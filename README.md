@@ -1,20 +1,38 @@
 # How to Schweiz – Website
 
-Statische, responsive Website für **How to Schweiz** (Deutsch / English / Schwiizerdütsch), umgesetzt nach dem Design-Entwurf.
+Statische, responsive Website für **How to Schweiz** (Deutsch / English / Schwiizerdütsch).
+Jede Sprache und jede Leistung hat eine eigene Unterseite, damit Google sie einzeln findet.
 
 ## Aufbau
 
-- `index.html` – Startseite mit allen Abschnitten, Leistungs-Detailseiten (`#/leistung/svc1` … `svc6`), Impressum (`#/impressum`) und Datenschutz (`#/datenschutz`)
-- `assets/css/style.css` – Gestaltung (Desktop, Tablet, Smartphone)
-- `assets/js/i18n.js` – alle Texte in DE / EN / GSW
-- `assets/js/main.js` – Sprachumschaltung (wird im Browser gemerkt), Navigation, mobiles Menü, Kontaktformular
+| Pfad | Inhalt |
+| --- | --- |
+| `src/content.js` | **Alle Texte** (DE / EN / GSW), inkl. FAQ und Leistungs-Detailseiten |
+| `src/build.js` | Erzeugt aus den Texten die fertigen Seiten in `docs/` |
+| `src/assets/` | CSS, JavaScript, Schriften (lokal, ohne Google-Server), Favicon, Vorschaubild |
+| `docs/` | **Fertige Website** – diesen Ordner hochladen bzw. als GitHub-Pages-Quelle wählen |
 
-Kein Build-Schritt nötig: Dateien auf einen beliebigen Webspace laden (oder GitHub Pages aktivieren) und `index.html` öffnen.
+Seiten: `/` (DE), `/en/`, `/gsw/`, je sechs Leistungsseiten unter `leistungen/`, dazu `impressum.html` und `datenschutz.html`.
+
+## Texte ändern
+
+1. Text in `src/content.js` anpassen
+2. `node src/build.js` ausführen (Node.js genügt, keine weiteren Pakete nötig)
+3. Inhalt von `docs/` hochladen
+
+Sobald die Domain feststeht, mit Domain bauen – dann kommen Sitemap, Canonical-Links,
+Sprachverknüpfungen (hreflang) und das Vorschaubild für WhatsApp/LinkedIn dazu:
+
+```
+SITE_URL=https://www.deine-domain.ch node src/build.js
+```
 
 ## Vor dem Livegang ergänzen
 
-- Telefonnummer und E-Mail-Adresse (`ph_phone`, `ph_email` in `assets/js/i18n.js`)
-- Kontaktformular: E-Mail-Adresse in `CONTACT_EMAIL` (`assets/js/main.js`) eintragen – das Formular öffnet dann das Mailprogramm mit vorausgefüllter Nachricht
-- Impressum: Adressen, Tätigkeit/Rechtsform, Aufsichtsbehörde, Registernummer (Platzhalter in eckigen Klammern in `index.html`)
+- Telefonnummer und E-Mail (`ph_phone`, `ph_email` in `src/content.js`)
+- Kontaktformular: Adresse in `CONTACT_EMAIL` (`src/assets/js/main.js`) – oder durch Terminbuchung ersetzen
+- Impressum (Platzhalter in `src/build.js`, Abschnitt „Rechtliches“)
 - Datenschutzerklärung (aktuell nur Platzhalter)
-- Optional: Foto von Sami Kaune statt Platzhalter-Avatar
+- Fotos von Sami
+- Schwiizerdütsch-Texte von einer Muttersprachlerin / einem Muttersprachler gegenlesen lassen
+- Zahlen jährlich prüfen (Krankenkassenprämie, Säule-3a-Maximalbetrag, Statistiken)

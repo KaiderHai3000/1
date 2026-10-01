@@ -1,4 +1,11 @@
 /* How to Schweiz – Stylesheet */
+
+/* Schriften lokal ausgeliefert (SIL Open Font License, siehe assets/fonts) */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/fraunces-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/work-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/work-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/work-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/work-sans-latin-700-normal.woff2') format('woff2'); }
 :root {
   --bg: #F8F6F1; --bg-alt: #EFE9DD; --surface: #FFFFFF;
   --ink: #1E2530; --ink-soft: #4B5563;
@@ -45,8 +52,8 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .brand-group { display: flex; align-items: center; gap: 24px; }
 .brand { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); letter-spacing: .01em; white-space: nowrap; }
 .lang-switch { display: flex; align-items: center; gap: 6px; color: var(--line); font-size: 13px; }
-.lang-btn { background: none; border: none; padding: 6px 2px; cursor: pointer; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--ink-soft); }
-.lang-btn[aria-pressed="true"] { font-weight: 700; color: var(--navy); }
+.lang-btn { display: inline-flex; align-items: center; min-height: 32px; padding: 0 2px; font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+.lang-btn[aria-current="true"] { font-weight: 700; color: var(--navy); }
 .lang-btn:hover { color: var(--accent); }
 .site-nav { display: flex; align-items: center; gap: 32px; }
 .nav-link { font-size: 15px; font-weight: 500; color: var(--ink); transition: color .2s ease; }
@@ -81,7 +88,7 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .usp-grid { padding-bottom: 96px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .usp-item { border-top: 2px solid var(--navy); padding-top: 20px; }
 .usp-item .icon { margin-bottom: 10px; display: block; }
-.usp-item h3 { font-size: 19px; margin: 0 0 10px; }
+.usp-item h2 { font-size: 19px; margin: 0 0 10px; }
 .usp-item p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
 
 /* ---------- Stats ---------- */
@@ -123,12 +130,6 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .step h3 { font-size: 19px; color: var(--white); margin: 10px 0 8px; }
 .step p { font-size: 14px; line-height: 1.6; color: var(--white-soft); margin: 0; }
 
-/* ---------- Partner ---------- */
-.partner-box { max-width: 780px; margin: 0 auto; background: var(--accent-soft); border-radius: 24px; padding: 48px 56px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-.partner-box h2 { font-size: 30px; margin: 0; }
-.partner-box p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: 60ch; }
-.partner-box .btn { margin-top: 6px; }
-
 /* ---------- Kontakt ---------- */
 .contact-grid { padding-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
 .contact-grid .body-text { margin-bottom: 32px; }
@@ -162,10 +163,35 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .placeholder-note { background: var(--bg-alt); border: 1px dashed var(--line); border-radius: 12px; padding: 20px; }
 .detail-footer { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; }
 
+/* ---------- FAQ ---------- */
+.faq-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 64px; align-items: start; }
+.faq-note { margin-top: 18px; }
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; min-height: 44px; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--navy); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--accent); }
+.faq-chevron { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: transform .2s ease; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+.faq-item p { margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); max-width: 68ch; }
+
+/* ---------- Einwilligung ---------- */
+.form-consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+.form-consent input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); flex-shrink: 0; }
+.form-consent input[aria-invalid="true"] { outline: 2px solid #B42318; outline-offset: 2px; }
+.form-consent a { color: var(--accent); text-decoration: underline; }
+
+/* ---------- Weitere Leistungen ---------- */
+.other-services { margin-top: 56px; }
+.other-services h2 { margin: 0 0 16px; }
+.other-services ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.other-services a { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: 15px; font-weight: 600; color: var(--navy); transition: border-color .2s ease; }
+.other-services a:hover { border-color: var(--accent); }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-deep); padding: 48px 0; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-brand { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--white); }
+.footer-brand { display: inline-block; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--white); }
 .footer-links { display: flex; gap: 28px; }
 .footer-link { font-size: 14px; color: var(--white-soft); transition: color .2s ease; }
 .footer-link:hover { color: var(--white); }
@@ -190,7 +216,7 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
   .hero-art { flex: none; align-self: center; }
   .hero-art svg { width: 280px; }
   .hero h1 { font-size: 44px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-grid, .faq-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 680px) {
@@ -212,11 +238,11 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
   .band-alt, .band-dark { margin-bottom: 64px; }
   .stat-value { font-size: 34px; }
   .profile-card { padding: 24px; }
-  .partner-box { padding: 32px 24px; }
-  .partner-box h2 { font-size: 25px; }
   .detail { padding-top: 32px; padding-bottom: 64px; }
   .detail h1 { font-size: 32px; }
   .contact-form .btn { align-self: stretch; }
+  .other-services ul { grid-template-columns: 1fr; }
+  .faq-item summary { font-size: 17px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
