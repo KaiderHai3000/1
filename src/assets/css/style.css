@@ -172,6 +172,10 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .detail address p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); margin: 0; }
 .detail address .name { font-weight: 600; color: var(--navy); }
 .detail address .gap { margin-top: 16px; }
+.detail-list { margin: 12px 0 0; padding-left: 22px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.detail-list li { margin-bottom: 4px; }
+.detail h2.detail-h2 { margin-top: 40px; }
+.detail-p + .detail-p { margin-top: 14px; }
 .placeholder-note { background: var(--bg-alt); border: 1px dashed var(--line); border-radius: 12px; padding: 20px; }
 .detail-footer { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; }
 

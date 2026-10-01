@@ -444,9 +444,62 @@ const impressum = legalPage('impressum.html', 'Impressum', `
   <p class="detail-p">Die Inhalte dieser Website wurden sorgfältig erstellt, ersetzen aber keine individuelle Rechts-, Steuer- oder Versicherungsberatung. Für die Inhalte externer Links übernehmen wir keine Haftung. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich.</p>
 `);
 
-const datenschutz = legalPage('datenschutz.html', 'Datenschutzerklärung', `
-  <p class="detail-p placeholder-note">[Die Datenschutzerklärung wird noch ergänzt. Bitte vor Veröffentlichung durch einen rechtssicheren Text ersetzen, z.&nbsp;B. zu: Verantwortlicher, Hosting und Server-Logfiles, Kontaktformular bzw. E-Mail-Kontakt, Terminbuchung (sobald eingebunden) sowie Ihre Rechte als betroffene Person. Diese Website lädt keine Schriftarten oder Skripte von Drittanbietern und setzt keine Cookies.]</p>
-`);
+const H = (t) => `<h2 class="detail-h2">${t}</h2>`;
+const P = (t) => `<p class="detail-p">${t}</p>`;
+const UL = (items) => `<ul class="detail-list">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
+const datenschutz = legalPage('datenschutz.html', 'Datenschutzerklärung', [
+  P('Mit dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir beim Besuch dieser Website und bei einer Kontaktaufnahme bearbeiten, zu welchem Zweck und welche Rechte Sie haben. Wir bearbeiten Personendaten nach dem Schweizer Datenschutzgesetz (DSG) und, soweit anwendbar, nach der Datenschutz-Grundverordnung der EU (DSGVO).'),
+  P('Stand: Oktober 2026'),
+
+  H('1. Verantwortlicher'),
+  `<address>
+    <p class="name">Sami Kaune</p>
+    <p>[Firmenname / Rechtsform, falls vorhanden]</p>
+    <p>[Strasse und Hausnummer]</p>
+    <p>[PLZ] Basel, Schweiz</p>
+    <p class="gap">E-Mail: [E-Mail-Adresse]</p>
+    <p>Telefon: [Telefonnummer]</p>
+  </address>`,
+  P('Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte erreichen Sie uns unter der oben genannten Adresse.'),
+
+  H('2. Keine Cookies, kein Tracking'),
+  P('Diese Website setzt keine Cookies, verwendet keine Analyse- oder Tracking-Werkzeuge und bindet keine Werbung, Social-Media-Plugins, Karten- oder Videodienste von Dritten ein. Schriftarten und alle weiteren Dateien werden direkt von unserem Webserver ausgeliefert; beim Aufruf der Website werden keine Daten an Google oder andere Drittanbieter übertragen.'),
+
+  H('3. Hosting und Server-Logfiles'),
+  P('Diese Website wird bei [Name und Sitz des Hosting-Anbieters] betrieben. Bei jedem Aufruf speichert der Webserver automatisch Informationen, die Ihr Browser übermittelt (Server-Logfiles):'),
+  UL(['IP-Adresse des anfragenden Geräts', 'Datum und Uhrzeit des Zugriffs', 'aufgerufene Seite bzw. Datei', 'Referrer-URL (die zuvor besuchte Seite)', 'verwendeter Browser und Betriebssystem']),
+  P('Diese Daten benötigen wir, um die Website technisch bereitzustellen, ihre Stabilität und Sicherheit zu gewährleisten und Missbrauch zu erkennen. Rechtsgrundlage ist unser berechtigtes Interesse am sicheren Betrieb der Website (Art. 31 Abs. 1 DSG; Art. 6 Abs. 1 lit. f DSGVO). Die Logfiles werden nach spätestens [7] Tagen gelöscht, sofern sie nicht zur Aufklärung eines Sicherheitsvorfalls länger benötigt werden. Mit dem Hosting-Anbieter besteht ein Vertrag über die Auftragsbearbeitung.'),
+
+  H('4. Kontaktaufnahme per Formular, E-Mail oder Telefon'),
+  P('Wenn Sie uns über das Kontaktformular, per E-Mail oder telefonisch kontaktieren, bearbeiten wir die Angaben, die Sie uns mitteilen – in der Regel Name, E-Mail-Adresse, optional Telefonnummer sowie die Beschreibung Ihrer Situation. Das Kontaktformular übermittelt keine Daten an unseren Server: Es öffnet Ihr eigenes E-Mail-Programm mit einer vorausgefüllten Nachricht, die Sie selbst absenden.'),
+  P('Wir verwenden diese Angaben ausschliesslich, um Ihre Anfrage zu beantworten und ein Erstgespräch bzw. eine Beratung vorzubereiten. Rechtsgrundlage sind vorvertragliche Massnahmen auf Ihre Anfrage (Art. 6 Abs. 1 lit. b DSGVO) sowie Ihre Einwilligung, die Sie im Formular erteilen (Art. 6 Abs. 1 lit. a DSGVO). Die Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.'),
+  P('Bitte teilen Sie uns über das Formular oder per E-Mail keine besonders schützenswerten Daten wie Gesundheitsangaben mit. Solche Informationen besprechen wir, falls für die Beratung nötig, im persönlichen Gespräch.'),
+  P('Ihre Anfrage und die Korrespondenz bewahren wir auf, solange es für die Bearbeitung nötig ist. Kommt keine Zusammenarbeit zustande, löschen wir die Daten spätestens [12] Monate nach dem letzten Kontakt. Kommt es zu einer Beratung, gelten die gesetzlichen Aufbewahrungspflichten.'),
+
+  H('5. Terminbuchung'),
+  P('[Dieser Abschnitt wird ergänzt, sobald ein Online-Buchungstool eingebunden ist: Name und Sitz des Anbieters, bearbeitete Daten, Speicherort, Rechtsgrundlage und Link zu dessen Datenschutzerklärung.]'),
+
+  H('6. Weitergabe an Dritte'),
+  P('Wir verkaufen Ihre Daten nicht und geben sie nicht zu Werbezwecken weiter. Für Fragen, die über unsere eigene Beratung hinausgehen, arbeiten wir mit spezialisierten Partnern zusammen, etwa Rechtsanwälten, Steuerberatern oder Versicherungsgesellschaften. Ihre Daten geben wir an solche Partner nur weiter, wenn Sie dem vorher zugestimmt haben oder es für die von Ihnen gewünschte Leistung erforderlich ist. Darüber hinaus erhalten nur unsere technischen Dienstleister (z.&nbsp;B. Hosting, E-Mail) Zugriff, soweit es für ihre Aufgabe nötig ist.'),
+
+  H('7. Bearbeitung in der Schweiz und im Ausland'),
+  P('Wir bearbeiten Ihre Daten grundsätzlich in der Schweiz [und/oder im EWR – je nach Standort des Hosting- und E-Mail-Anbieters anpassen]. Die Schweiz und die Staaten des EWR verfügen gegenseitig über ein angemessenes Datenschutzniveau. Eine Übermittlung in andere Staaten findet nur statt, wenn dort ein angemessener Schutz gewährleistet ist, etwa durch Standardvertragsklauseln.'),
+
+  H('8. Datensicherheit'),
+  P('Diese Website wird verschlüsselt über HTTPS übertragen. Wir treffen angemessene technische und organisatorische Massnahmen, um Ihre Daten vor Verlust, Missbrauch und unberechtigtem Zugriff zu schützen.'),
+
+  H('9. Externe Links'),
+  P('Diese Website enthält Links zu Websites Dritter. Erst wenn Sie einen solchen Link anklicken, werden Daten an den jeweiligen Betreiber übertragen. Für dessen Datenbearbeitung ist ausschliesslich dieser Betreiber verantwortlich.'),
+
+  H('10. Ihre Rechte'),
+  P('Sie haben im Rahmen des anwendbaren Datenschutzrechts insbesondere folgende Rechte:'),
+  UL(['Auskunft darüber, ob und welche Personendaten wir über Sie bearbeiten', 'Berichtigung unrichtiger Daten', 'Löschung Ihrer Daten, soweit keine Aufbewahrungspflicht besteht', 'Einschränkung der Bearbeitung', 'Herausgabe Ihrer Daten in einem gängigen elektronischen Format (Datenübertragbarkeit)', 'Widerspruch gegen eine Bearbeitung, die auf unserem berechtigten Interesse beruht', 'Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft']),
+  P('Für die Ausübung Ihrer Rechte genügt eine formlose Nachricht an die oben genannte Adresse. Zur Prüfung Ihrer Identität können wir einen Nachweis verlangen.'),
+  P('Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. In der Schweiz ist dies der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB, www.edoeb.admin.ch). Wenn Sie in der EU wohnen, können Sie sich auch an die Aufsichtsbehörde Ihres Wohnsitzlandes wenden, in Deutschland an die Datenschutzbehörde Ihres Bundeslandes.'),
+
+  H('11. Änderungen'),
+  P('Wir passen diese Datenschutzerklärung an, wenn sich unsere Website oder die rechtlichen Vorgaben ändern. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.'),
+].join('\n  '));
 
 /* ---------- Schreiben ---------- */
 function write(file, data) {
