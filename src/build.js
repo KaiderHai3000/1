@@ -13,6 +13,8 @@ const SITE_URL = (process.env.SITE_URL || '').replace(/\/+$/, '');
 const OUT = path.join(__dirname, '..', 'docs');
 const PARTNER_URL = 'https://claude.ai/artifact/FZNhNHnx4s9K6ucTt1nSgR';
 const LANGS = ['de', 'en', 'gsw'];
+const BOOKING = content.bookingUrl || '';
+const ctaHref = (home) => BOOKING || home + '#kontakt';
 const PREFIX = { de: '', en: 'en/', gsw: 'gsw/' };
 
 const ICONS = {
@@ -123,7 +125,7 @@ ${head.join('\n')}
       <a class="nav-link" href="${home}#ueber-uns">${esc(t.nav_ueberuns)}</a>
       <a class="nav-link" href="${home}#faq">${esc(t.nav_faq)}</a>
       <a class="nav-link" href="${home}#kontakt">${esc(t.nav_kontakt)}</a>
-      <a class="btn btn-primary btn-sm" href="${home}#kontakt">${esc(t.nav_cta)}</a>
+      <a class="btn btn-primary btn-sm" href="${ctaHref(home)}">${esc(t.nav_cta)}</a>
     </nav>
   </div>
 </header>
@@ -179,6 +181,21 @@ function homePage(lang) {
         <p>${esc(f.a)}</p>
       </details>`).join('');
 
+  const testimonials = content.testimonials.length ? `<section class="container section-pad">
+  <div class="section-head">
+    <span class="eyebrow">${esc(t.testimonials_eyebrow)}</span>
+    <h2 class="section-title">${esc(t.testimonials_title)}</h2>
+  </div>
+  <div class="testimonial-grid">${content.testimonials.map((q) => `
+    <figure class="testimonial">
+      <blockquote>${esc(q.quote[lang] || q.quote.de)}</blockquote>
+      <figcaption>${q.photo ? `<img src="${r(q.photo)}" alt="" width="48" height="48">` : ''}<span><strong>${esc(q.name)}</strong>${esc(q.situation[lang] || q.situation.de)}</span></figcaption>
+    </figure>`).join('')}
+  </div>
+</section>
+
+` : '';
+
   const body = `
 <section id="top" class="hero container">
   <div class="hero-copy">
@@ -186,7 +203,7 @@ function homePage(lang) {
     <h1>${esc(t.hero_title)}</h1>
     <p class="lead">${esc(t.hero_text)}</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#kontakt">${esc(t.hero_cta1)}</a>
+      <a class="btn btn-primary" href="${ctaHref('')}">${esc(t.hero_cta1)}</a>
       <a class="btn btn-ghost" href="#leistungen">${esc(t.hero_cta2)}</a>
     </div>
   </div>
@@ -291,7 +308,7 @@ function homePage(lang) {
   </div>
 </section>
 
-<section id="faq" class="container section-pad faq-grid">
+${testimonials}<section id="faq" class="container section-pad faq-grid">
   <div class="section-head">
     <span class="eyebrow">${esc(t.faq_eyebrow)}</span>
     <h2 class="section-title">${esc(t.faq_title)}</h2>
@@ -305,7 +322,12 @@ function homePage(lang) {
   <div>
     <span class="eyebrow">${esc(t.kontakt_eyebrow)}</span>
     <h2 class="section-title">${esc(t.kontakt_title)}</h2>
-    <p class="body-text">${esc(t.kontakt_text)}</p>
+    <p class="body-text">${esc(t.kontakt_text)}</p>${BOOKING ? `
+    <div class="booking-box">
+      <h3>${esc(t.booking_title)}</h3>
+      <p>${esc(t.booking_text)}</p>
+      <a class="btn btn-primary" href="${esc(BOOKING)}">${esc(t.booking_cta)}</a>
+    </div>` : ''}
     <form id="contact-form" class="contact-form" novalidate
       data-msg-invalid="${esc(t.form_invalid)}" data-msg-nomail="${esc(t.form_nomail)}"
       data-msg-ok="${esc(t.form_ok)}" data-subject="${esc(t.form_subject)}">
@@ -339,6 +361,7 @@ function homePage(lang) {
       <p class="role">${esc(t.sami_contact_role)}</p>
       <p class="line"><svg class="icon icon-accent" viewBox="0 0 48 48" width="15" height="15" aria-hidden="true"><rect x="14" y="6" width="20" height="36" rx="4"/><line x1="20" y1="34" x2="28" y2="34"/></svg><span>${esc(t.ph_phone)}</span></p>
       <p class="line"><svg class="icon icon-accent" viewBox="0 0 48 48" width="15" height="15" aria-hidden="true"><rect x="6" y="12" width="36" height="24" rx="3"/><path d="M6 14 L24 28 L42 14"/></svg><span>${esc(t.ph_email)}</span></p>
+      <p class="line"><svg class="icon icon-accent" viewBox="0 0 48 48" width="15" height="15" aria-hidden="true"><path d="M24 43 C24 43 10 28 10 19 A14 14 0 0 1 38 19 C38 28 24 43 24 43 Z"/><circle cx="24" cy="19" r="5"/></svg><span>${esc(t.ph_address)}</span></p>
     </div>
   </div>
 </section>
@@ -390,7 +413,7 @@ function servicePage(lang, svc) {
   <p class="detail-intro">${esc(d.intro)}</p>
   ${sections}
   <div class="detail-footer">
-    <a class="btn btn-primary" href="${home}#kontakt">${esc(t.hero_cta1)}</a>
+    <a class="btn btn-primary" href="${ctaHref(home)}">${esc(t.hero_cta1)}</a>
     <a class="btn btn-ghost" href="${home}#faq">${esc(t.nav_faq)}</a>
   </div>
   <nav class="other-services" aria-label="${esc(t.leistungen_eyebrow)}">

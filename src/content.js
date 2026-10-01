@@ -11,17 +11,27 @@ exports.services = [
   { id: 'svc6', slug: 'absicherung' }
 ];
 
+/* Terminbuchung: Link zum Buchungstool (z. B. Calendly). Leer = alle Buttons führen zum Kontaktformular. */
+exports.bookingUrl = '';
+
+/* Kundenstimmen: nur echte Zitate mit schriftlicher Zustimmung der Person eintragen.
+ * Der Abschnitt erscheint erst, wenn hier mindestens ein Eintrag steht. Format:
+ * { name: 'Anna M.', photo: 'assets/img/anna.jpg',
+ *   situation: { de: 'Pflegefachfrau, 2025 nach Basel gezogen', en: '…', gsw: '…' },
+ *   quote: { de: '…', en: '…', gsw: '…' } } */
+exports.testimonials = [];
+
 exports.de = {
   html_lang: 'de', og_locale: 'de_DE', lang_name: 'Deutsch',
   meta_title: 'How to Schweiz – Ihr Weg nach Basel und in die Schweiz',
   meta_description: 'Auswandern in die Schweiz: persönliche Begleitung bei Krankenkasse, Vorsorge, Säule 3a, Steuern und Bankkonto – von jemandem, der den Weg von Deutschland nach Basel selbst gegangen ist.',
   skip: 'Zum Inhalt springen', menu: 'Menü', lang_label: 'Sprache',
-  nav_leistungen: 'Leistungen', nav_ablauf: 'Ablauf', nav_ueberuns: 'Über uns', nav_faq: 'FAQ', nav_kontakt: 'Kontakt', nav_cta: 'Erstgespräch sichern',
+  nav_leistungen: 'Leistungen', nav_ablauf: 'Ablauf', nav_ueberuns: 'Über uns', nav_faq: 'FAQ', nav_kontakt: 'Kontakt', nav_cta: 'Erstgespräch vereinbaren',
   map_de: 'Deutschland', map_ch: 'Schweiz', map_alt: 'Karte: der Weg von Deutschland nach Basel in der Schweiz',
   hero_eyebrow: 'Von Deutschland nach Basel',
   hero_title: 'Ihr Weg in die Schweiz — klar geplant, sicher begleitet.',
   hero_text: 'Sami Kaune und sein Team begleiten Sie beim Wechsel nach Basel und in die Schweiz — bei Vorsorge, Versicherung, Steuern und allem, was beim Auswandern wirklich zählt. Persönlich begleitet, mit Blick für beide Seiten der Grenze.',
-  hero_cta1: 'Kostenloses Erstgespräch', hero_cta2: 'Leistungen ansehen',
+  hero_cta1: 'Kostenloses Erstgespräch vereinbaren', hero_cta2: 'Leistungen ansehen',
   usp1_title: 'Beide Seiten der Grenze', usp1_text: 'Sami und sein Team behalten beide Rechts- und Vorsorgesysteme im Blick — auf deutscher wie auf Schweizer Seite.',
   usp2_title: 'Persönlich begleitet', usp2_text: 'Vom ersten Gespräch bis zur Anmeldung in der Schweiz — ein fester Ansprechpartner, kein Callcenter.',
   usp3_title: 'Ganzheitlich gedacht', usp3_text: 'Vorsorge, Versicherung, Steuern und Banking — koordiniert aus einer Hand statt in Einzelteilen.',
@@ -65,8 +75,8 @@ exports.de = {
       a: "Mit einer B-Bewilligung wird die Steuer zunächst direkt vom Lohn abgezogen (Quellensteuer). Liegt Ihr Bruttolohn über CHF 120'000 pro Jahr, folgt automatisch eine ordentliche Steuererklärung. Darunter können Sie diese bis zum 31. März des Folgejahres beantragen, um zum Beispiel Einzahlungen in die Säule 3a abzuziehen. Grenzgänger zahlen in der Schweiz höchstens 4,5 % Quellensteuer und werden in Deutschland besteuert, wobei die Schweizer Steuer angerechnet wird." },
     { q: 'Wie viel kann ich in die Säule 3a einzahlen?',
       a: "Angestellte mit Pensionskasse können 2026 bis zu CHF 7'258 einzahlen. Ohne Pensionskasse sind es bis zu 20 % des Erwerbseinkommens, höchstens CHF 36'288. Die Einzahlungen können Sie vom steuerbaren Einkommen abziehen." },
-    { q: 'Was kostet das Erstgespräch?',
-      a: 'Nichts. Das Erstgespräch ist kostenlos und unverbindlich. Wir hören uns Ihre Situation an und sagen Ihnen offen, wo wir helfen können.' }
+    { q: 'Was kostet die Beratung und wie finanziert sie sich?',
+      a: 'Das Erstgespräch ist kostenlos und unverbindlich. Auch die weitere Beratung kostet Sie kein Honorar: Wir werden von den Versicherern und Anbietern vergütet, wenn Sie über uns einen Vertrag abschliessen. Wie hoch diese Vergütung ist, legen wir Ihnen auf Wunsch offen. Leistungen unserer Partner – etwa Anwälte oder Steuerberater – rechnen diese direkt mit Ihnen ab, immer erst nach vorheriger Absprache. Wurden Sie uns von einem Berater empfohlen, erhält dieser einen Teil unserer Vergütung; für Sie entstehen dadurch keine Mehrkosten.' }
   ],
   kontakt_eyebrow: 'Kontakt', kontakt_title: 'Bereit für Ihren Neustart?',
   kontakt_text: 'Schreiben Sie uns kurz Ihre Situation — wir melden uns für ein unverbindliches Erstgespräch bei Ihnen.',
@@ -77,7 +87,9 @@ exports.de = {
   form_nomail: 'Das Kontaktformular ist noch nicht verbunden. Bitte nutzen Sie vorerst die Kontaktdaten.',
   form_ok: 'Ihr E-Mail-Programm wird geöffnet …', form_subject: 'Anfrage über How to Schweiz',
   sami_contact_role: 'Ansprechpartner Basel, Schweiz',
-  ph_phone: '[Telefonnummer]', ph_email: '[E-Mail-Adresse]',
+  ph_phone: '[Telefonnummer]', ph_email: '[E-Mail-Adresse]', ph_address: '[Strasse und Nr.], [PLZ] Basel',
+  booking_title: 'Lieber direkt einen Termin wählen?', booking_text: 'Suchen Sie sich im Kalender einen freien Termin für Ihr kostenloses Erstgespräch aus – per Video oder Telefon.', booking_cta: 'Termin online buchen',
+  testimonials_eyebrow: 'Erfahrungen', testimonials_title: 'Was unsere Kunden sagen.',
   footer_impressum: 'Impressum', footer_datenschutz: 'Datenschutz', footer_partner: 'Für Berater',
   footer_copyright: '© 2026 How to Schweiz.',
   footer_disclaimer: 'Diese Seite ersetzt keine individuelle Rechts- oder Steuerberatung.',
@@ -114,7 +126,7 @@ exports.en = {
   hero_eyebrow: 'From Germany to Basel',
   hero_title: 'Your path to Switzerland — clearly planned, safely guided.',
   hero_text: 'Sami Kaune and his team support you with the move to Basel and Switzerland — with pension planning, insurance, taxes and everything that really matters when emigrating. Personally guided, with an eye on both sides of the border.',
-  hero_cta1: 'Free initial consultation', hero_cta2: 'View services',
+  hero_cta1: 'Book your free consultation', hero_cta2: 'View services',
   usp1_title: 'Both sides of the border', usp1_text: 'Sami and his team keep both legal and pension systems in view — on the German side as much as the Swiss.',
   usp2_title: 'Personally guided', usp2_text: 'From the first conversation to registering in Switzerland — one dedicated contact, not a call centre.',
   usp3_title: 'Thought through, holistically', usp3_text: 'Pension planning, insurance, taxes and banking — coordinated in one place instead of piecemeal.',
@@ -158,8 +170,8 @@ exports.en = {
       a: 'With a B permit, tax is initially deducted directly from your salary (withholding tax). If your gross salary exceeds CHF 120,000 a year, an ordinary tax return follows automatically. Below that, you can request one by 31 March of the following year, for example to deduct pillar 3a contributions. Cross-border commuters pay at most 4.5% withholding tax in Switzerland and are taxed in Germany, where the Swiss tax is credited.' },
     { q: 'How much can I pay into pillar 3a?',
       a: 'Employees with a pension fund can pay in up to CHF 7,258 in 2026. Without a pension fund, the limit is 20% of earned income, up to CHF 36,288. Contributions are deductible from taxable income.' },
-    { q: 'How much does the initial consultation cost?',
-      a: 'Nothing. The initial consultation is free and without obligation. We listen to your situation and tell you openly where we can help.' }
+    { q: 'What does the advice cost, and how is it paid for?',
+      a: 'The initial consultation is free and without obligation. Our further advice does not cost you a fee either: we are paid by the insurers and providers when you take out a contract through us. We will gladly disclose the amount on request. Our partners, such as lawyers or tax advisors, bill you directly for their services, always after prior agreement. If an advisor referred you to us, they receive part of our compensation; this costs you nothing extra.' }
   ],
   kontakt_eyebrow: 'Contact', kontakt_title: 'Ready for your fresh start?',
   kontakt_text: 'Send us a short note about your situation — we will get in touch for a no-obligation initial conversation.',
@@ -170,7 +182,9 @@ exports.en = {
   form_nomail: 'The contact form is not connected yet. Please use the contact details for now.',
   form_ok: 'Opening your email program …', form_subject: 'Enquiry via How to Schweiz',
   sami_contact_role: 'Contact in Basel, Switzerland',
-  ph_phone: '[Phone number]', ph_email: '[Email address]',
+  ph_phone: '[Phone number]', ph_email: '[Email address]', ph_address: '[Street and no.], [Postcode] Basel',
+  booking_title: 'Prefer to pick a time right away?', booking_text: 'Choose a free slot in the calendar for your free initial consultation – by video or phone.', booking_cta: 'Book an appointment online',
+  testimonials_eyebrow: 'Experiences', testimonials_title: 'What our clients say.',
   footer_impressum: 'Legal notice', footer_datenschutz: 'Privacy policy', footer_partner: 'For advisors',
   footer_copyright: '© 2026 How to Schweiz.',
   footer_disclaimer: 'This page does not replace individual legal or tax advice.',
@@ -209,7 +223,7 @@ exports.gsw = {
   hero_eyebrow: 'Vo Dütschland uf Basel',
   hero_title: 'Ihre Wäg i d Schwiiz — klar planet, sicher begleitet.',
   hero_text: 'De Sami Kaune und sis Team begleited Sie bim Wächsel uf Basel und i d Schwiiz — bi de Vorsorg, de Versicherige, de Stüüre und allem, wo bim Uswandere würkli zellt. Persönlich begleitet, mit eme Blick für beidi Site vo de Gränze.',
-  hero_cta1: 'Gratis Erschtgspräch', hero_cta2: 'Leischtige aaluege',
+  hero_cta1: 'Gratis Erschtgspräch abmache', hero_cta2: 'Leischtige aaluege',
   usp1_title: 'Beidi Site vo de Gränze', usp1_text: 'De Sami und sis Team händ beidi Rächts- und Vorsorgsystem im Blick — uf de dütsche wie uf de Schwiizer Site.',
   usp2_title: 'Persönlich begleitet', usp2_text: 'Vom erschte Gspräch bis zur Aamäldig i de Schwiiz — en fixe Aasprächpartner, keis Callcenter.',
   usp3_title: 'Ganzheitlich dänkt', usp3_text: 'Vorsorg, Versicherige, Stüüre und Banking — alles us einere Hand, statt i einzelne Stückli.',
@@ -253,8 +267,8 @@ exports.gsw = {
       a: "Mit ere B-Bewilligung wird d Stüür zerscht diräkt vom Lohn abzoge (Quellestüür). Liit Ihre Bruttolohn über CHF 120'000 pro Jahr, folgt automatisch e ordentlichi Stüürerklärig. Drunder chönd Sie die bis zum 31. März vom Folgejahr beaaträge, zum Biispiil zum d Iizahlige i d Süüle 3a abzzieh. Gränzgänger zahled i de Schwiiz höchschtens 4,5 % Quellestüür und werded in Dütschland bestüüret, wobi d Schwiizer Stüür aagrächnet wird." },
     { q: 'Wie vill chan ich i d Süüle 3a iizahle?',
       a: "Aagstellti mit Pensionskasse chönd 2026 bis CHF 7'258 iizahle. Ohni Pensionskasse sinds bis 20 % vom Erwerbsiikomme, höchschtens CHF 36'288. D Iizahlige chönd Sie vom stüürbare Iikomme abzieh." },
-    { q: 'Was choscht s Erschtgspräch?',
-      a: 'Nüüt. S Erschtgspräch isch gratis und unverbindlich. Mir losed eus Ihri Situation aa und säged Ihne offe, wo mir chönd hälfe.' }
+    { q: 'Was choscht d Beratig und wie finanziert si sich?',
+      a: 'S Erschtgspräch isch gratis und unverbindlich. Au di wiiter Beratig choscht Sie kei Honorar: Mir werded vo de Versicherige und Aabieter entschädiget, wänn Sie über eus en Vertrag abschlüüssed. Wie höch die Entschädigung isch, leged mir Ihne uf Wunsch offe. D Leischtige vo eusne Partner – zum Biispiil Aawält oder Stüürberater – rächned die diräkt mit Ihne ab, immer erscht nach Absprach. Händ Sie eus vo emene Berater empfohle übercho, überchunnt dä en Teil vo eusere Entschädigung; für Sie choscht das nüüt meh.' }
   ],
   kontakt_eyebrow: 'Kontakt', kontakt_title: 'Parat für Ihre Neuaafang?',
   kontakt_text: 'Schriibed Sie eus churz Ihri Situation — mir mälded eus für es unverbindlichs Erschtgspräch bi Ihne.',
@@ -265,7 +279,9 @@ exports.gsw = {
   form_nomail: 'S Kontaktformular isch no nöd verbunde. Bitte bruuched Sie vorerscht d Kontaktdate.',
   form_ok: 'Ihres E-Mail-Programm wird göffnet …', form_subject: 'Aafrog über How to Schweiz',
   sami_contact_role: 'Aasprächpartner Basel, Schwiiz',
-  ph_phone: '[Telefonnummere]', ph_email: '[E-Mail-Adrässe]',
+  ph_phone: '[Telefonnummere]', ph_email: '[E-Mail-Adrässe]', ph_address: '[Strass und Nr.], [PLZ] Basel',
+  booking_title: 'Lieber grad en Termin uussueche?', booking_text: 'Sueched Sie sich im Kaländer en freie Termin für Ihres gratis Erschtgspräch uus – per Video oder Telefon.', booking_cta: 'Termin online bueche',
+  testimonials_eyebrow: 'Erfahrige', testimonials_title: 'Was eusi Kunde säged.',
   footer_impressum: 'Impressum', footer_datenschutz: 'Dateschutz', footer_partner: 'Für Berater',
   footer_copyright: '© 2026 How to Schweiz.',
   footer_disclaimer: 'Die Siite ersetzt kei individuelli Rächts- oder Stüürberatig.',
