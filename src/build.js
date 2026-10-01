@@ -65,13 +65,14 @@ function heroMap(t) {
 }
 
 /* ---------- Gerüst ---------- */
-function layout({ lang, t, page, title, description, body, alternates, jsonld, navHome }) {
+function layout({ lang, t, page, title, description, body, alternates, jsonld, navHome, noindex }) {
   const r = (to) => rel(page, to);
   const home = r(navHome || homePath(lang));
   const head = [];
   head.push(`<meta charset="utf-8">`);
   head.push(`<meta name="viewport" content="width=device-width, initial-scale=1">`);
   head.push(`<title>${esc(title)}</title>`);
+  if (noindex) head.push(`<meta name="robots" content="noindex">`);
   head.push(`<meta name="description" content="${esc(description)}">`);
   head.push(`<link rel="icon" href="${r('assets/favicon.svg')}" type="image/svg+xml">`);
   head.push(`<link rel="preload" href="${r('assets/fonts/work-sans-latin-400-normal.woff2')}" as="font" type="font/woff2" crossorigin>`);
@@ -137,7 +138,7 @@ ${body}
       <div class="footer-links">
         <a class="footer-link" href="${r('impressum.html')}" hreflang="de">${esc(t.footer_impressum)}</a>
         <a class="footer-link" href="${r('datenschutz.html')}" hreflang="de">${esc(t.footer_datenschutz)}</a>
-        <a class="footer-link" href="${PARTNER_URL}">${esc(t.footer_partner)}</a>
+        <a class="footer-link" href="${r('fuer-berater.html')}" hreflang="de">${esc(t.footer_partner)}</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -501,6 +502,75 @@ const datenschutz = legalPage('datenschutz.html', 'Datenschutzerklärung', [
   P('Wir passen diese Datenschutzerklärung an, wenn sich unsere Website oder die rechtlichen Vorgaben ändern. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.'),
 ].join('\n  '));
 
+/* ---------- Für Berater (nur Deutsch, nicht für Suchmaschinen) ---------- */
+function advisorPage() {
+  const t = content.de;
+  const file = 'fuer-berater.html';
+  const item = (title, text) => `<li><strong>${title}</strong><span>${text}</span></li>`;
+  const body = `
+<section class="container detail detail-wide">
+  <a class="back-link" href="index.html">${esc(t.home_label)}</a>
+  <span class="pill">Für Finanzberater in Deutschland</span>
+  <h1>Ihr Kunde zieht in die Schweiz. Sie verlieren ihn nicht.</h1>
+  <p class="detail-intro">Wenn ein Kunde auswandert, endet die Beratung oft abrupt – und mit ihr das Geschäft. Dabei ist der Umzug einer der wichtigsten Beratungsanlässe überhaupt: Einiges muss noch in Deutschland abgeschlossen oder angepasst werden, solange der Kunde hier wohnt. Dieses Briefing zeigt, worauf es ankommt, und wie wir die Arbeit zwischen Ihnen und uns aufteilen.</p>
+
+  <h2 class="detail-h2">Warum der Zeitpunkt vor dem Umzug zählt</h2>
+  <p class="detail-p">Nach der Abmeldung in Deutschland schließen viele deutsche Versicherer keine neuen Verträge mehr mit Kunden ab, die im Ausland wohnen. Gleichzeitig ist der Kunde heute gesünder als in ein paar Jahren. Das Zeitfenster liegt zwischen Jobzusage und Wegzug – in der Regel zwei bis sechs Monate. Wer es nutzt, sichert den Kunden sauber ab und bleibt sein Ansprechpartner für die deutsche Seite.</p>
+
+  <h2 class="detail-h2">Die Umsatzchance: Ihr Briefing für das Bestandsgespräch</h2>
+  <div class="brief-grid">
+    <div class="brief-col brief-col-go">
+      <h3>Vor dem Umzug abschließen oder erhöhen</h3>
+      <ul>
+        ${item('Berufsunfähigkeitsversicherung', 'Die deutsche BU sichert den zuletzt ausgeübten Beruf ab. Die Schweizer Invalidenversicherung und die Pensionskasse zahlen dagegen nur bei Erwerbsunfähigkeit, gemessen am gesamten Arbeitsmarkt – eine echte Lücke. Bestehende BU vor dem Wegzug über die Nachversicherungsgarantie an das höhere Schweizer Gehalt anpassen; Neuabschluss, solange der Wohnsitz noch in Deutschland ist. Bedingungen prüfen: weltweite Geltung, Meldepflichten, Leistungsprüfung im Ausland.')}
+        ${item('Risikolebensversicherung', 'Besonders wichtig, wenn Familie oder Kredite in Deutschland bleiben, etwa für eine vermietete Immobilie. Die Todesfallleistung der Pensionskasse hängt am Schweizer Arbeitgeber und fällt bei einem Jobwechsel anders aus.')}
+        ${item('PKV-Anwartschaft (für Privatversicherte)', 'In der Schweiz ist die Grundversicherung Pflicht, die deutsche PKV wird ruhend gestellt. Eine große Anwartschaft sichert die Rückkehr ohne neue Gesundheitsprüfung und erhält die Altersrückstellungen – zentral für alle, die eine Rückkehr nicht ausschließen.')}
+      </ul>
+    </div>
+    <div class="brief-col">
+      <h3>Weiterführen und anpassen</h3>
+      <ul>
+        ${item('Private Renten- und Lebensversicherungen', 'Laufen in der Regel weiter. Kündigen ist meist nachteilig. Beiträge und spätere Auszahlungen werden aber nach Schweizer Recht besteuert – vor dem Wegzug steuerlich prüfen lassen.')}
+        ${item('Betriebliche Altersversorgung', 'Beim Wechsel zum Schweizer Arbeitgeber beitragsfrei stellen oder privat fortführen. Die erworbenen Ansprüche bleiben erhalten.')}
+        ${item('Depots und Sparpläne', 'Einige deutsche Banken und Broker kündigen Kunden mit Wohnsitz in der Schweiz. Rechtzeitig klären, ob das Depot bleiben kann oder übertragen werden muss.')}
+        ${item('Grenzgänger', 'Wer in Deutschland wohnen bleibt, behält die meisten Verträge. Bei der Krankenversicherung haben Grenzgänger ein Wahlrecht – wer sich für Deutschland entscheidet, bleibt auch hier Ihr Kunde.')}
+      </ul>
+    </div>
+    <div class="brief-col brief-col-stop">
+      <h3>Vorsicht oder beenden</h3>
+      <ul>
+        ${item('Riester', 'Die Schweiz gehört nicht zur EU/EWR. Ein Wegzug gilt als schädliche Verwendung: Zulagen und Steuervorteile werden zurückgefordert. Keine Neuabschlüsse; bestehende Verträge vor dem Wegzug gezielt beraten.')}
+        ${item('Basisrente (Rürup)', 'Die Förderung setzt Steuerpflicht in Deutschland voraus. Neuabschluss kurz vor dem Wegzug ist meist nicht sinnvoll; bestehende Verträge beitragsfrei stellen.')}
+        ${item('Sachversicherungen', 'Privathaftpflicht, Hausrat, Kfz und Rechtsschutz sind an den deutschen Wohnsitz gebunden und enden in der Regel mit dem Wegzug oder können gekündigt werden. Die Schweizer Lösungen übernehmen wir.')}
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="detail-h2">So teilen wir uns die Arbeit</h2>
+  <ol class="brief-steps">
+    <li><strong>Ihr Kunde erzählt vom Umzug.</strong> Sie führen das Bestandsgespräch mit diesem Briefing.</li>
+    <li><strong>Sie empfehlen uns weiter.</strong> Ihr Kunde nennt Sie beim Erstkontakt, damit die Empfehlung Ihnen zugeordnet wird.</li>
+    <li><strong>Wir übernehmen die Schweizer Seite:</strong> Krankenkasse, Säule 3a, Pensionskasse, Absicherung und Konto.</li>
+    <li><strong>Sie bleiben Ansprechpartner für Deutschland.</strong> Wir fassen Ihre deutschen Verträge nicht an.</li>
+  </ol>
+
+  <div class="brief-box">
+    <h2 class="detail-h2">Kundenschutz und Vergütung</h2>
+    <ul class="detail-list">
+      <li>Wir beraten ausschließlich zur Schweizer Seite. Bestehende deutsche Verträge werden von uns weder gekündigt noch ersetzt.</li>
+      <li>Zieht Ihr Kunde zurück nach Deutschland, geht er an Sie zurück.</li>
+      <li>Für jede Empfehlung, aus der eine Zusammenarbeit entsteht, erhalten Sie [20] % der Provisionen, die wir im ersten Jahr mit dem Kunden erzielen – quartalsweise nach Zahlungseingang. Für Ihren Kunden entstehen keine Mehrkosten.</li>
+      <li>Die Einzelheiten regeln wir in einer schriftlichen Tippgebervereinbarung.</li>
+    </ul>
+    <a class="btn btn-primary" href="${PARTNER_URL}">Partner werden</a>
+  </div>
+
+  <p class="source brief-note">Hinweis: Dieses Briefing gibt einen allgemeinen Überblick (Stand Oktober 2026) und ersetzt keine Prüfung im Einzelfall. Die Beratung muss sich wie immer am Bedarf des Kunden orientieren und dokumentiert werden. Steuerliche Fragen gehören zu einer Steuerberaterin oder einem Steuerberater. Als Tippgeber stellen Sie nur den Kontakt her und beraten nicht zu Schweizer Produkten.</p>
+</section>
+`;
+  return { page: file, html: layout({ lang: 'de', t, page: file, title: 'Für Berater – How to Schweiz', description: 'Briefing für Finanzberater: Was Kunden vor dem Umzug in die Schweiz noch in Deutschland abschließen oder anpassen sollten.', body, alternates: null, navHome: 'index.html', noindex: true }) };
+}
+
 /* ---------- Schreiben ---------- */
 function write(file, data) {
   const target = path.join(OUT, file);
@@ -523,13 +593,13 @@ LANGS.forEach((lang) => {
   pages.push(homePage(lang));
   content.services.forEach((svc) => pages.push(servicePage(lang, svc)));
 });
-pages.push(impressum, datenschutz);
+pages.push(impressum, datenschutz, advisorPage());
 pages.forEach((p) => write(p.page, p.html));
 
 write('.nojekyll', '');
 write('robots.txt', 'User-agent: *\nAllow: /\n' + (SITE_URL ? `Sitemap: ${SITE_URL}/sitemap.xml\n` : ''));
 if (SITE_URL) {
-  const urls = pages.map((p) => `  <url><loc>${abs(p.page)}</loc></url>`).join('\n');
+  const urls = pages.filter((p) => p.page !== 'fuer-berater.html').map((p) => `  <url><loc>${abs(p.page)}</loc></url>`).join('\n');
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 }
 

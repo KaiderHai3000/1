@@ -204,6 +204,26 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
 .other-services a { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); font-size: 15px; font-weight: 600; color: var(--navy); transition: border-color .2s ease; }
 .other-services a:hover { border-color: var(--accent); }
 
+/* ---------- Für Berater ---------- */
+.detail-wide { max-width: 1120px; }
+.detail-wide .detail-intro, .detail-wide .detail-p { max-width: 760px; }
+.detail-wide .pill { display: table; margin-top: 24px; }
+.detail-wide h1 { margin-top: 20px; }
+.brief-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 8px; }
+.brief-col { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 16px; padding: 24px; }
+.brief-col-go { border-top-color: #2F6B4F; }
+.brief-col-stop { border-top-color: var(--accent); }
+.brief-col h3 { font-size: 19px; margin: 0 0 16px; }
+.brief-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.brief-col li { display: flex; flex-direction: column; gap: 6px; }
+.brief-col li strong { color: var(--navy); font-size: 15px; }
+.brief-col li span { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+.brief-steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; max-width: 760px; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+.brief-steps strong { color: var(--navy); }
+.brief-box { margin-top: 48px; background: var(--accent-soft); border-radius: 20px; padding: 8px 36px 36px; max-width: 860px; }
+.brief-box .detail-list { margin-bottom: 24px; }
+.brief-note { margin-top: 40px; max-width: 760px; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-deep); padding: 48px 0; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -233,6 +253,7 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
   .hero-map { width: 300px; }
   .hero h1 { font-size: 44px; }
   .contact-grid, .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+  .brief-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -258,6 +279,7 @@ section[id], #top { scroll-margin-top: calc(var(--header-h) + 8px); }
   .detail h1 { font-size: 32px; }
   .contact-form .btn { align-self: stretch; }
   .other-services ul { grid-template-columns: 1fr; }
+  .brief-box { padding: 4px 20px 24px; }
   .faq-item summary { font-size: 17px; }
 }
 
