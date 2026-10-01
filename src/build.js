@@ -35,6 +35,35 @@ function rel(from, to) {
 const abs = (p) => SITE_URL + '/' + p.replace(/(^|\/)index\.html$/, '$1');
 const icon = (id, size) => `<svg class="icon icon-accent" viewBox="0 0 48 48" width="${size}" height="${size}" aria-hidden="true">${ICONS[id]}</svg>`;
 
+/* ---------- Karte im Hero (Umrisse: Natural Earth, gemeinfrei) ---------- */
+const MAP = require('./map-data.json');
+function heroMap(t) {
+  const [bx, by] = MAP.basel;
+  const [sx, sy] = MAP.start;
+  const cx = sx - 70, cy = sy + 70;              // Kontrollpunkt: Bogen nach Westen
+  const dx = bx - cx, dy = by - cy, len = Math.hypot(dx, dy);
+  const ex = (bx - dx / len * 16).toFixed(1), ey = (by - dy / len * 16).toFixed(1);
+  const [dlx, dly] = MAP.deLabel, [clx, cly] = MAP.chLabel;
+  return `
+    <svg class="hero-map" viewBox="0 0 ${MAP.W} ${MAP.H}" role="img" aria-label="${esc(t.map_alt)}">
+      <defs>
+        <marker id="route-head" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L9,5 L1,9" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      </defs>
+      <path class="map-nb" d="${MAP.nb}"/>
+      <path class="map-de" d="${MAP.de}"/>
+      <path class="map-ch" d="${MAP.ch}"/>
+      <text class="map-label" x="${dlx}" y="${dly - 6}" text-anchor="middle">${esc(t.map_de.toUpperCase())}</text>
+      <text class="map-label map-label-ch" x="${clx + 18}" y="${cly + 14}" text-anchor="middle">${esc(t.map_ch.toUpperCase())}</text>
+      <circle class="map-start" cx="${sx}" cy="${sy}" r="4"/>
+      <path class="map-route" d="M${sx},${sy} Q${cx},${cy} ${ex},${ey}" marker-end="url(#route-head)"/>
+      <circle class="map-halo" cx="${bx}" cy="${by}" r="15"/>
+      <circle class="map-pin" cx="${bx}" cy="${by}" r="7"/>
+      <line class="map-leader" x1="${bx - 9}" y1="${by - 6}" x2="${bx - 30}" y2="${by - 22}"/>
+      <rect class="map-tag" x="${bx - 92}" y="${by - 40}" width="64" height="28" rx="14"/>
+      <text class="map-tag-text" x="${bx - 60}" y="${by - 21}" text-anchor="middle">Basel</text>
+    </svg>`;
+}
+
 /* ---------- Gerüst ---------- */
 function layout({ lang, t, page, title, description, body, alternates, jsonld, navHome }) {
   const r = (to) => rel(page, to);
@@ -159,18 +188,7 @@ function homePage(lang) {
       <a class="btn btn-ghost" href="#leistungen">${esc(t.hero_cta2)}</a>
     </div>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <svg viewBox="0 0 420 460" fill="none">
-      <circle cx="210" cy="220" r="195" fill="var(--accent-soft)" opacity="0.22"/>
-      <path d="M150,20 C220,10 300,25 340,70 C365,110 360,180 330,230 C300,270 240,285 190,270 C130,255 95,210 90,150 C85,100 100,45 150,20 Z" fill="var(--bg-alt)" stroke="var(--navy)" stroke-width="2"/>
-      <text x="212" y="145" text-anchor="middle" font-size="20" font-weight="700" fill="var(--navy)">DE</text>
-      <path d="M170,258 C210,244 252,250 277,275 C292,296 286,322 264,338 C238,353 198,347 173,326 C157,310 154,283 170,258 Z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="232" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="var(--navy)">CH</text>
-      <path d="M 235 175 C 215 205, 195 240, 187 262" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"/>
-      <circle cx="185" cy="270" r="8" fill="var(--accent)" stroke="#fff" stroke-width="2.5"/>
-      <text x="146" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="var(--navy)">Basel</text>
-    </svg>
-  </div>
+  <div class="hero-art">${heroMap(t)}</div>
 </section>
 
 <section class="container usp-grid">
