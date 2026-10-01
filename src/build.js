@@ -40,22 +40,23 @@ const MAP = require('./map-data.json');
 function heroMap(t) {
   const [bx, by] = MAP.basel;
   const [sx, sy] = MAP.start;
-  const cx = sx - 70, cy = sy + 70;              // Kontrollpunkt: Bogen nach Westen
+  const cx = bx + 55, cy = by - 120;              // Kontrollpunkt östlich: Pfeil kommt aus Deutschland, nicht entlang der Grenze
   const dx = bx - cx, dy = by - cy, len = Math.hypot(dx, dy);
-  const ex = (bx - dx / len * 16).toFixed(1), ey = (by - dy / len * 16).toFixed(1);
+  const ex = (bx - dx / len * 20).toFixed(1), ey = (by - dy / len * 20).toFixed(1);
   const [dlx, dly] = MAP.deLabel, [clx, cly] = MAP.chLabel;
   return `
     <svg class="hero-map" viewBox="0 0 ${MAP.W} ${MAP.H}" role="img" aria-label="${esc(t.map_alt)}">
       <defs>
-        <marker id="route-head" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1,1 L9,5 L1,9" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        <marker id="route-head" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" markerUnits="strokeWidth" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--accent)"/></marker>
       </defs>
       <path class="map-nb" d="${MAP.nb}"/>
       <path class="map-de" d="${MAP.de}"/>
       <path class="map-ch" d="${MAP.ch}"/>
       <text class="map-label" x="${dlx}" y="${dly - 6}" text-anchor="middle">${esc(t.map_de.toUpperCase())}</text>
       <text class="map-label map-label-ch" x="${clx + 18}" y="${cly + 14}" text-anchor="middle">${esc(t.map_ch.toUpperCase())}</text>
-      <circle class="map-start" cx="${sx}" cy="${sy}" r="4"/>
+      <path class="map-route-casing" d="M${sx},${sy} Q${cx},${cy} ${ex},${ey}"/>
       <path class="map-route" d="M${sx},${sy} Q${cx},${cy} ${ex},${ey}" marker-end="url(#route-head)"/>
+      <circle class="map-start" cx="${sx}" cy="${sy}" r="5"/>
       <circle class="map-halo" cx="${bx}" cy="${by}" r="15"/>
       <circle class="map-pin" cx="${bx}" cy="${by}" r="7"/>
       <line class="map-leader" x1="${bx - 9}" y1="${by - 6}" x2="${bx - 30}" y2="${by - 22}"/>
