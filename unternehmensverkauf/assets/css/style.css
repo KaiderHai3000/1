@@ -88,6 +88,12 @@ a { color: inherit; text-decoration: none; }
 .formula__term { font-family: var(--serif); font-size: clamp(18px, 2.4vw, 23px); color: var(--ink); }
 .formula__term--result { color: var(--accent); border-bottom: 2px solid var(--accent-warm); }
 .formula__op { font-family: var(--mono); font-size: 20px; color: var(--accent-warm); }
+.terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.term { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.term dt { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-warm); }
+.term dd { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.term p { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+.term strong { color: var(--accent); font-weight: 600; }
 .calc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 40px; padding-top: 30px; }
 .calc__inputs { display: flex; flex-direction: column; gap: 20px; }
 .calc output { color: var(--accent); font-weight: 500; }
@@ -172,6 +178,7 @@ a { color: inherit; text-decoration: none; }
   .grid-ablauf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
+  .terms { grid-template-columns: 1fr; }
   .calc { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
