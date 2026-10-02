@@ -111,6 +111,25 @@ a { color: inherit; text-decoration: none; }
 .calc__delta strong { font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 3vw, 28px); color: var(--accent); font-variant-numeric: tabular-nums; }
 .calc__note { margin-top: 18px; font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 640px; }
 
+/* Multiplikatoren nach Branche */
+.mult { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.mult__title { font-size: 22px; color: var(--accent); }
+.mult__intro { font-size: 15px; line-height: 1.65; color: var(--ink-soft); max-width: 640px; }
+.mult__scroll { overflow-x: auto; }
+.mult__table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.mult__table th, .mult__table td { padding: 11px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.mult__table thead th { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-bottom: 8px; }
+.mult__table tbody th { font-weight: 500; color: var(--ink); padding-right: 16px; }
+.mult__range { font-family: var(--mono); font-size: 14px; color: var(--ink); white-space: nowrap; padding-right: 24px !important; font-variant-numeric: tabular-nums; }
+.mult__viz { width: 40%; min-width: 160px; }
+.mult__track { position: relative; height: 8px; background: var(--placeholder-bg); border-radius: 4px; }
+.mult__bar { position: absolute; top: 0; bottom: 0; background: var(--accent); border-radius: 4px; }
+.mult__table tbody tr:hover .mult__bar { background: var(--accent-warm); }
+.mult__axis { position: relative; height: 14px; }
+.mult__axis span { position: absolute; transform: translateX(-50%); text-transform: none; }
+.mult__axis span:first-child { transform: none; }
+.mult__axis span:last-child { transform: translateX(-100%); }
+
 /* Ablauf */
 .section--accent.ablauf { display: flex; flex-direction: column; gap: 60px; }
 .grid-ablauf { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px; list-style: none; margin: 0; padding: 0; }
@@ -190,6 +209,7 @@ a { color: inherit; text-decoration: none; }
   .section { padding-top: 76px; padding-bottom: 76px; }
 }
 @media (max-width: 560px) {
+  .mult__viz { display: none; }
   .form__row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
