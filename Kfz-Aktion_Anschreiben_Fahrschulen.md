@@ -17,18 +17,20 @@ Sehr geehrte/r Frau/Herr [Nachname],
 
 ich bin [Vorname Nachname], Finanzberater bei tecis in [Ort], und betreue viele junge Leute aus Pforzheim und dem Enzkreis.
 
-Fast jeder Fahrschüler stellt sich irgendwann dieselbe Frage: *Was kostet mich mein erstes Auto im Monat?* Die Versicherung ist dabei oft der größte Brocken. Für Fahranfänger kann sie leicht über 1.000 € im Jahr kosten, obwohl es mit den richtigen Tipps viel günstiger geht.
+Das Thema Versicherung behandeln Sie im Theorieunterricht ja ohnehin. Die Fragen der Schüler gehen dann aber oft schnell ins Praktische: *Was kostet mich das mit meinem Wunschauto? Kann ich über meine Eltern laufen? Lohnt sich Vollkasko?* Dafür fehlt im Unterricht meist die Zeit.
 
-**Mein Vorschlag:** Ich komme in Ihre Fahrschule und halte einen kurzen Vortrag (ca. 30 Minuten), zum Beispiel im Anschluss an eine Theoriestunde:
+**Mein Vorschlag:** Ich übernehme diesen Teil für Sie, kostenlos. Ich komme in eine Ihrer Theoriestunden und gehe ca. 30 Minuten mit den Schülern in die Praxis:
 
 **„Dein erstes Auto – Versicherung ohne Kostenfalle“**
-- Haftpflicht, Teilkasko, Vollkasko: Was brauche ich wirklich?
-- Wie man als Fahranfänger nicht mit dem teuersten Beitrag startet (z. B. Zweitwagen der Eltern, SF-Übernahme, BF17)
-- Typklasse, Regionalklasse, Telematik: worauf man vor dem Autokauf achten sollte
+- Echte Rechenbeispiele: Was kostet ein typisches Fahranfänger-Auto im Monat?
+- Wie man nicht mit dem teuersten Beitrag startet (z. B. Zweitwagen der Eltern, SF-Übernahme, BF17)
+- Typklasse, Regionalklasse, Telematik: worauf man schon vor dem Autokauf achten sollte
+- Offene Fragerunde, bei der ich auf jede persönliche Situation eingehe
 
 **Was das für Sie bedeutet:**
-- **Kostenlos und ohne Aufwand:** Ich bringe alles mit, Sie stellen nur den Raum.
-- **Mehrwert für Ihre Schüler:** praktisches Wissen, das über die Prüfung hinausgeht.
+- **Entlastung im Unterricht:** Ich decke das Thema ab, Sie gewinnen Zeit für den übrigen Stoff.
+- **Kostenlos und ohne Aufwand:** Ich bringe alles mit.
+- **Mehrwert für Ihre Schüler:** konkrete Zahlen und Antworten aus der Beratungspraxis.
 - **Kein Verkauf im Unterricht:** Der Vortrag ist reine Information. Wer danach eine persönliche Beratung möchte, meldet sich freiwillig.
 - **60 € pro Empfehlung:** Für jede Empfehlung, aus der ein Kunde wird, erhalten Sie 60 € Tippgeberprovision. Das halten wir in einer einfachen schriftlichen Vereinbarung fest.
 
@@ -71,7 +73,7 @@ Mit freundlichen Grüßen
 
 ### Kern (max. 30 Sekunden)
 
-> „Ihre Fahrschüler kaufen nach der Prüfung meistens ihr erstes Auto, und die Versicherung ist dabei für viele ein Schock. Ich biete Fahrschulen an, kostenlos einen 30-minütigen Vortrag zu halten: *Dein erstes Auto – Versicherung ohne Kostenfalle*. Reine Information, kein Verkauf im Unterricht. Wenn danach jemand eine Beratung möchte und Sie den Kontakt vermitteln, bekommen Sie für jede Empfehlung, aus der ein Kunde wird, 60 €.“
+> „Sie sprechen das Thema Versicherung ja sowieso im Theorieunterricht an. Ich biete an, diesen Teil kostenlos für Sie zu übernehmen und mit den Schülern konkret durchzurechnen, was ihr erstes Auto kostet. 30 Minuten, *Dein erstes Auto – Versicherung ohne Kostenfalle*. Reine Information, kein Verkauf im Unterricht. Wenn danach jemand eine Beratung möchte und Sie den Kontakt vermitteln, bekommen Sie für jede Empfehlung, aus der ein Kunde wird, 60 €.“
 
 ### Frage zum Abschluss
 
@@ -81,6 +83,7 @@ Mit freundlichen Grüßen
 
 | Einwand | Antwort |
 |---|---|
+| **„Das Thema machen wir schon selbst im Unterricht.“** | „Genau deshalb komme ich auf Sie zu. Sie legen die Grundlagen, ich gehe mit den Schülern in die Praxis: konkrete Beiträge, Eltern-Zweitwagen, SF-Übernahme. Fragen, für die im Unterricht meist keine Zeit bleibt. Sie können die Stunde damit sogar entlasten.“ |
 | **„Keine Zeit.“** | „Verstehe ich. Deshalb halte ich den Vortrag kurz: 30 Minuten, gerne direkt nach einer Theoriestunde. Sie müssen nichts vorbereiten.“ |
 | **„Wir wollen keine Vertreter im Unterricht.“** | „Das verstehe ich gut. Darum gibt es im Vortrag kein Verkaufsgespräch, keine Formulare, keine Daten. Die Schüler bekommen neutrale Tipps. Wer mehr wissen will, meldet sich freiwillig. Sie können sich den Vortrag gerne vorher anschauen.“ |
 | **„Unsere Schüler interessiert das nicht.“** | „Spätestens beim ersten Auto interessiert es sie. Gerade die Frage, ob sie über die Eltern versichert werden können, kommt fast immer. Viele Fahrschulen sehen das als Pluspunkt gegenüber anderen Fahrschulen.“ |
