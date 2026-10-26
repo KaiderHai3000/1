@@ -56,7 +56,7 @@ Das Formular bewusst kurz halten: Alles Weitere klären wir im Gespräch. Jede z
 
 **Text für die Einwilligung (Frage 10, eine Option):**
 
-> Ich bin einverstanden, dass Kai Schindler (tecis Pforzheim) meine Angaben nutzt, um mich wegen eines unverbindlichen Angebots zur Kfz-Versicherung zu kontaktieren. Meine Einwilligung kann ich jederzeit per E-Mail an kai.schindler@tecis.de widerrufen. Datenschutzhinweise: [Link]
+> Ich bin einverstanden, dass Kai Schindler (tecis Pforzheim) meine Angaben nutzt, um mich wegen eines unverbindlichen Angebots zur Kfz-Versicherung zu kontaktieren. Meine Einwilligung kann ich jederzeit per E-Mail an Kai.Schindler@tecis.de widerrufen. Datenschutzhinweise: [Link]
 
 ---
 

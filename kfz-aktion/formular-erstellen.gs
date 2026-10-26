@@ -14,7 +14,7 @@
 // ---- Einstellungen ----------------------------------------------------------
 const BERATER = 'Kai Schindler';
 const BUERO = 'tecis Pforzheim';
-const WIDERRUF_EMAIL = 'kai.schindler@tecis.de';
+const WIDERRUF_EMAIL = 'Kai.Schindler@tecis.de';
 const DATENSCHUTZ_LINK = ''; // z. B. 'https://…/datenschutz' – leer = Hinweis fehlt noch
 // -----------------------------------------------------------------------------
 
