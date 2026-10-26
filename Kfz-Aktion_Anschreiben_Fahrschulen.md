@@ -30,7 +30,7 @@ Fast jeder Fahrschüler stellt sich irgendwann dieselbe Frage: *Was kostet mich 
 - **Kostenlos und ohne Aufwand:** Ich bringe alles mit, Sie stellen nur den Raum.
 - **Mehrwert für Ihre Schüler:** praktisches Wissen, das über die Prüfung hinausgeht.
 - **Kein Verkauf im Unterricht:** Der Vortrag ist reine Information. Wer danach eine persönliche Beratung möchte, meldet sich freiwillig.
-- **Tippgeberprovision:** Wenn aus Ihren Empfehlungen Kunden entstehen, erhalten Sie eine Provision. Die Einzelheiten regeln wir in einer einfachen schriftlichen Vereinbarung.
+- **60 € pro Empfehlung:** Für jede Empfehlung, aus der ein Kunde wird, erhalten Sie 60 € Tippgeberprovision. Das halten wir in einer einfachen schriftlichen Vereinbarung fest.
 
 Hätten Sie in den nächsten zwei Wochen 10 Minuten für ein kurzes Telefonat? Ich rufe Sie gerne an, oder Sie erreichen mich direkt unter [Telefon].
 
@@ -71,7 +71,7 @@ Mit freundlichen Grüßen
 
 ### Kern (max. 30 Sekunden)
 
-> „Ihre Fahrschüler kaufen nach der Prüfung meistens ihr erstes Auto, und die Versicherung ist dabei für viele ein Schock. Ich biete Fahrschulen an, kostenlos einen 30-minütigen Vortrag zu halten: *Dein erstes Auto – Versicherung ohne Kostenfalle*. Reine Information, kein Verkauf im Unterricht. Wenn danach jemand eine Beratung möchte und Sie den Kontakt vermitteln, bekommen Sie dafür eine Tippgeberprovision.“
+> „Ihre Fahrschüler kaufen nach der Prüfung meistens ihr erstes Auto, und die Versicherung ist dabei für viele ein Schock. Ich biete Fahrschulen an, kostenlos einen 30-minütigen Vortrag zu halten: *Dein erstes Auto – Versicherung ohne Kostenfalle*. Reine Information, kein Verkauf im Unterricht. Wenn danach jemand eine Beratung möchte und Sie den Kontakt vermitteln, bekommen Sie für jede Empfehlung, aus der ein Kunde wird, 60 €.“
 
 ### Frage zum Abschluss
 
@@ -99,6 +99,6 @@ In der Excel-Liste eintragen: **Status**, **Ansprechpartner**, **Letzter Kontakt
 Bevor du die erste Vereinbarung abschließt, solltest du das mit der **tecis-Compliance** abstimmen.
 
 - **Nur Tippgeber, nicht Vermittler:** Der Fahrschulinhaber darf nur den Kontakt herstellen. Er darf nicht zu Versicherungen beraten, keine Tarife empfehlen und keine Anträge ausfüllen. Sonst braucht er eine Erlaubnis nach §34d GewO.
-- **Schriftliche Tippgeber-Vereinbarung:** Höhe und Fälligkeit der Provision schriftlich festhalten, am besten mit der Vorlage von tecis, falls es eine gibt.
+- **Schriftliche Tippgeber-Vereinbarung:** 60 € pro Empfehlung, aus der ein Kunde wird. Außerdem festhalten, wann die Provision fällig ist (z. B. nach Policierung) und was bei Storno passiert. Am besten die Vorlage von tecis nutzen, falls es eine gibt.
 - **Einwilligung der Schüler:** Kontaktdaten dürfen nur mit Einwilligung des Schülers weitergegeben werden (DSGVO). Am einfachsten ist eine Kontaktkarte, die der Schüler selbst ausfüllt und unterschreibt. Bei Minderjährigen (z. B. BF17) zusätzlich die Eltern einbeziehen.
 - **Transparenz:** Den Schülern offen sagen, dass du Finanzberater bist und eine Beratung freiwillig ist.
