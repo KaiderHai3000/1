@@ -14,6 +14,7 @@
 // ---- Einstellungen ----------------------------------------------------------
 const BERATER = 'Kai Schindler';
 const BUERO = 'tecis Pforzheim';
+const WIDERRUF_EMAIL = 'kai.schindler@tecis.de';
 const DATENSCHUTZ_LINK = ''; // z. B. 'https://…/datenschutz' – leer = Hinweis fehlt noch
 // -----------------------------------------------------------------------------
 
@@ -32,8 +33,6 @@ const FAHRSCHULEN = [
 ];
 
 function formularErstellen() {
-  const meineEmail = Session.getActiveUser().getEmail();
-
   const form = FormApp.create('Kfz-Aktion Fahrschulen – Interessenten');
   form.setTitle('Dein erstes Auto – unverbindliches Kfz-Versicherungsangebot')
     .setDescription(
@@ -68,7 +67,7 @@ function formularErstellen() {
     .setChoiceValues([
       'Ich bin einverstanden, dass ' + BERATER + ' (' + BUERO + ') meine Angaben nutzt, um mich wegen eines ' +
       'unverbindlichen Angebots zur Kfz-Versicherung zu kontaktieren. Meine Einwilligung kann ich jederzeit per E-Mail an ' +
-      meineEmail + ' widerrufen.' + (DATENSCHUTZ_LINK ? ' Datenschutzhinweise: ' + DATENSCHUTZ_LINK : ''),
+      WIDERRUF_EMAIL + ' widerrufen.' + (DATENSCHUTZ_LINK ? ' Datenschutzhinweise: ' + DATENSCHUTZ_LINK : ''),
     ]);
 
   // ---- Abschnitt 2: unter 18 ----
