@@ -15,7 +15,7 @@ Platzhalter in **[eckigen Klammern]** vor dem Versand ersetzen.
 
 Sehr geehrte/r Frau/Herr [Nachname],
 
-ich bin [Vorname Nachname], Finanzberater bei tecis in [Ort], und betreue viele junge Leute aus Pforzheim und dem Enzkreis.
+ich bin Kai Schindler, Finanzberater bei tecis in Pforzheim, und betreue viele junge Leute aus Pforzheim und dem Enzkreis.
 
 Das Thema Versicherung behandeln Sie im Theorieunterricht ja ohnehin. Die Fragen der Schüler gehen dann aber oft schnell ins Praktische: *Was kostet mich das mit meinem Wunschauto? Kann ich über meine Eltern laufen? Lohnt sich Vollkasko?* Dafür fehlt im Unterricht meist die Zeit.
 
@@ -38,10 +38,12 @@ Hätten Sie in den nächsten zwei Wochen 10 Minuten für ein kurzes Telefonat? I
 
 Mit freundlichen Grüßen
 
-[Vorname Nachname]
-Finanzberater | tecis Finanzdienstleistungen AG
+Kai Schindler
+Finanzberater | tecis Pforzheim
 [Telefon] · [E-Mail]
 [Adresse Büro]
+
+**P.S.** Auch für Ihre eigenen Fahrschulautos kann ich Ihnen weiterhelfen: Mein Kollege Marvin Mönig ist auf Gewerbefahrzeuge spezialisiert und versichert regelmäßig Fahrschulfahrzeuge. Wenn Sie möchten, vergleicht er gerne unverbindlich Ihre aktuelle Flottenversicherung.
 
 ---
 
@@ -56,7 +58,7 @@ ich hatte Ihnen letzte Woche wegen eines kostenlosen Kurzvortrags zur Kfz-Versic
 Ich weiß, dass im Fahrschulalltag viel los ist. Deshalb nur kurz: Passt Ihnen ein Telefonat am [Tag] oder am [Tag]? Zehn Minuten reichen, dann können Sie entscheiden, ob das für Ihre Schüler interessant ist.
 
 Mit freundlichen Grüßen
-[Vorname Nachname]
+Kai Schindler
 [Telefon]
 
 ---
@@ -69,7 +71,7 @@ Mit freundlichen Grüßen
 
 ### Einstieg
 
-> „Guten Tag, [Name] von tecis hier in [Ort]. Spreche ich mit dem Inhaber / der Inhaberin der Fahrschule [Name]? … Haben Sie zwei Minuten? Ich habe eine kurze Idee für Ihre Fahrschüler.“
+> „Guten Tag, Kai Schindler von tecis hier in Pforzheim. Spreche ich mit dem Inhaber / der Inhaberin der Fahrschule [Name]? … Haben Sie zwei Minuten? Ich habe eine kurze Idee für Ihre Fahrschüler.“
 
 ### Kern (max. 30 Sekunden)
 
@@ -90,6 +92,12 @@ Mit freundlichen Grüßen
 | **„Wir arbeiten schon mit einer Versicherung / dem ADAC zusammen.“** | „Prima, dann wissen Sie ja, dass das Thema gefragt ist. Ich vergleiche mehrere Anbieter. Wäre es okay, wenn ich Ihnen das Konzept trotzdem kurz zeige?“ |
 | **„Was muss ich dafür tun?“** | „Nur einen Termin und einen Raum anbieten. Alles Weitere übernehme ich.“ |
 | **„Schicken Sie mir was zu.“** | „Mache ich gerne. Damit ich Ihnen das Richtige schicke: An welchem Wochentag haben Sie die meisten Theoriestunden? … Ich schicke Ihnen die Infos heute und melde mich am [Tag] noch mal.“ |
+
+### Zusatzangebot zum Schluss
+
+> „Noch eine Frage: Wie sind eigentlich Ihre Fahrschulautos versichert? Mein Kollege Marvin Mönig ist auf Gewerbefahrzeuge spezialisiert und versichert regelmäßig Fahrschulflotten. Darf er sich mal bei Ihnen melden und unverbindlich vergleichen?“
+
+Bei Interesse in der Excel-Liste die Spalte **Interesse Flotte (Marvin)** auf Ja setzen und Marvin informieren.
 
 ### Nach dem Gespräch
 
